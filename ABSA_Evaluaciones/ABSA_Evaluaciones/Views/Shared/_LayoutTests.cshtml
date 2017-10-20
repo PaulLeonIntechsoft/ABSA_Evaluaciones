@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @if (IsSectionDefined("AddToHead"))
+    {
+        @RenderSection("AddToHead", required: false)
+    }
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row todo">
+            <div class="col-xs-12 col-sm-3 com-md-3">
+                <div class="row fondo fondo-evaluador">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div id="imagenEvaluado" class="col-xs-3 col-sm-12">
+                                <div class="imagen-container">
+                                    @RenderSection("Imagen", required : false)
+                                </div>
+                            </div>
+                            <div id="evaluado" class="col-xs-9 col-sm-12">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <span>@ViewBag.TipoVista</span>
+                                        <h3 id="@ViewBag.IdEvaluado">@ViewBag.Evaluado</h3>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        @if (IsSectionDefined("AddProject"))
+	                                    {
+                                            @RenderSection("AddProject", required: false)
+	                                    }
+                                    </div>
+                                    <div class="col-xs-12">
+                                        @RenderSection("BajoImagen",required: false)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <div class="row">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scriptFinal", required: false);
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+    /*-- Ubicación de la imagen--*/
+    background-image: url(../Images/ingenieria-contra-incendios-equipos-abelin.jpg);
+    /*-- Centrar la imagen --*/
+    background-position: center top;
+    /*-- No repetir imagen de fondo --*/
+    background-repeat: no-repeat;
+    /*-- Imagen fija --*/
+    background-attachment: fixed;
+    /*-- La imagen reescala con el cambio de tamaño de la ventana --*/
+    background-size: cover;
+    /*-- Color de fondo en caso de problemas con imagen --*/
+    background-color: #ffffff;
+}
+
+.ventana-form{
+    background-color: rgba(25, 1, 1, 0.54);
+    padding: 10vh 35px;
+    border-radius: 9px;
+    color: white;
+}
+
+.custom-select{
+    width: 100%;
+}
+
+.ventana-form form div div p {  
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .ventana-form form div div p {
+        padding-left: 1em;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+.ventana-form form div:last-child {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}

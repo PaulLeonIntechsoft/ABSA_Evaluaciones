@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pruebaIntechModelStoreContainer" CdmEntityContainer="pruebaIntechEntities">
+    <FunctionImportMapping FunctionImportName="sp_cargarUsuarios" FunctionName="pruebaIntechModel.Store.sp_cargarUsuarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="pruebaIntechModel.sp_cargarUsuarios_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_logeo" FunctionName="pruebaIntechModel.Store.sp_logeo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="pruebaIntechModel.sp_logeo_Result">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

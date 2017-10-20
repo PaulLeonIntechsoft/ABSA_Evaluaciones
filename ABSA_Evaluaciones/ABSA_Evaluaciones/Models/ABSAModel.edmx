@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ABSA_EvaluacionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_insertarEvaluacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigoPersonal" Type="int" Mode="In" />
+          <Parameter Name="codRespuestaUno" Type="char" Mode="In" />
+          <Parameter Name="codRespuestaDos" Type="char" Mode="In" />
+          <Parameter Name="codRespuestaTres" Type="char" Mode="In" />
+          <Parameter Name="codRespuestaCuatro" Type="char" Mode="In" />
+          <Parameter Name="codRespuestaCinco" Type="char" Mode="In" />
+          <Parameter Name="codRespuestaSeis" Type="char" Mode="In" />
+          <Parameter Name="codRespuestaSiete" Type="smallint" Mode="In" />
+          <Parameter Name="usrEvaluador" Type="char" Mode="In" />
+          <Parameter Name="valorResultado" Type="char" Mode="In" />
+          <Parameter Name="notaResultado" Type="numeric" Mode="In" />
+          <Parameter Name="codigoProyecto" Type="char" Mode="In" />
+          <Parameter Name="codigoAdicional" Type="char" Mode="In" />
+          <Parameter Name="puestoPersonal" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_listarProyectos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_listarResultados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigoPersonal" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_listarResultadosVigentes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigoPersonal" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_logeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="char" Mode="In" />
+          <Parameter Name="contrasena" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_nota" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numeroPregunta" Type="smallint" Mode="In" />
+          <Parameter Name="codigoRespuesta" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_personalSeleccionado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigoProyecto" Type="char" Mode="In" />
+          <Parameter Name="codigoAdicional" Type="char" Mode="In" />
+          <Parameter Name="idPersonal" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_personalXProyecto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigoProyecto" Type="char" Mode="In" />
+          <Parameter Name="codigoAdicional" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_preguntas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_respuestas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numeroPregunta" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="ABSA_EvaluacionModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ABSA_EvaluacionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ABSA_EvaluacionEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insertarEvaluacion">
+            <Parameter Name="codigoPersonal" Mode="In" Type="Int32" />
+            <Parameter Name="codRespuestaUno" Mode="In" Type="String" />
+            <Parameter Name="codRespuestaDos" Mode="In" Type="String" />
+            <Parameter Name="codRespuestaTres" Mode="In" Type="String" />
+            <Parameter Name="codRespuestaCuatro" Mode="In" Type="String" />
+            <Parameter Name="codRespuestaCinco" Mode="In" Type="String" />
+            <Parameter Name="codRespuestaSeis" Mode="In" Type="String" />
+            <Parameter Name="codRespuestaSiete" Mode="In" Type="Int16" />
+            <Parameter Name="usrEvaluador" Mode="In" Type="String" />
+            <Parameter Name="valorResultado" Mode="In" Type="String" />
+            <Parameter Name="notaResultado" Mode="In" Type="Decimal" />
+            <Parameter Name="codigoProyecto" Mode="In" Type="String" />
+            <Parameter Name="codigoAdicional" Mode="In" Type="String" />
+            <Parameter Name="puestoPersonal" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_listarProyectos" ReturnType="Collection(ABSA_EvaluacionModel.sp_listarProyectos_Result)" />
+          <FunctionImport Name="sp_listarResultados" ReturnType="Collection(ABSA_EvaluacionModel.sp_listarResultados_Result)">
+            <Parameter Name="codigoPersonal" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_listarResultadosVigentes" ReturnType="Collection(ABSA_EvaluacionModel.sp_listarResultadosVigentes_Result)">
+            <Parameter Name="codigoPersonal" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_logeo" ReturnType="Collection(ABSA_EvaluacionModel.sp_logeo_Result)">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="contrasena" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_nota" ReturnType="Collection(ABSA_EvaluacionModel.sp_nota_Result)">
+            <Parameter Name="numeroPregunta" Mode="In" Type="Int16" />
+            <Parameter Name="codigoRespuesta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_personalSeleccionado" ReturnType="Collection(ABSA_EvaluacionModel.sp_personalSeleccionado_Result)">
+            <Parameter Name="codigoProyecto" Mode="In" Type="String" />
+            <Parameter Name="codigoAdicional" Mode="In" Type="String" />
+            <Parameter Name="idPersonal" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_personalXProyecto" ReturnType="Collection(ABSA_EvaluacionModel.sp_personalXProyecto_Result)">
+            <Parameter Name="codigoProyecto" Mode="In" Type="String" />
+            <Parameter Name="codigoAdicional" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_preguntas" ReturnType="Collection(ABSA_EvaluacionModel.sp_preguntas_Result)" />
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_respuestas" ReturnType="Collection(ABSA_EvaluacionModel.sp_respuestas_Result)">
+            <Parameter Name="numeroPregunta" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_listarProyectos_Result">
+          <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="chrNomProyecto" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="chrNomCli" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="chrEstado" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="sp_listarResultados_Result">
+          <Property Type="Int32" Name="bytID" Nullable="false" />
+          <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="chrNomCli" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="dtmFecEval" Nullable="false" Precision="23" />
+          <Property Type="String" Name="chrPuesto" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="chrNomEval" Nullable="false" MaxLength="70" />
+          <Property Type="String" Name="chrResult" Nullable="false" MaxLength="2" />
+        </ComplexType>
+        <ComplexType Name="sp_listarResultadosVigentes_Result">
+          <Property Type="Int32" Name="bytID" Nullable="false" />
+          <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="chrNomCli" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="dtmFecEval" Nullable="false" Precision="23" />
+          <Property Type="String" Name="chrPuesto" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="chrNomEval" Nullable="false" MaxLength="70" />
+          <Property Type="String" Name="chrResult" Nullable="false" MaxLength="2" />
+        </ComplexType>
+        <ComplexType Name="sp_logeo_Result">
+          <Property Type="String" Name="chrUsrEval" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="chrPasEval" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="chrNomEval" Nullable="false" MaxLength="70" />
+        </ComplexType>
+        <ComplexType Name="sp_nota_Result">
+          <Property Type="Int16" Name="chrNroPre" Nullable="false" />
+          <Property Type="String" Name="chrCodRes" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="chrDesRes" Nullable="false" MaxLength="120" />
+          <Property Type="Decimal" Name="intValRes" Nullable="false" Precision="18" Scale="1" />
+        </ComplexType>
+        <ComplexType Name="sp_personalSeleccionado_Result">
+          <Property Type="Int32" Name="bytID" Nullable="false" />
+          <Property Type="String" Name="chrNomPer" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="chrApePer" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="imgFoto" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="chrPuesto" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="chrNomProyecto" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="sp_personalXProyecto_Result">
+          <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+          <Property Type="Int32" Name="bytID" Nullable="false" />
+          <Property Type="String" Name="chrApePer" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="chrNomPer" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="chrFecNac" Nullable="false" Precision="23" />
+          <Property Type="Binary" Name="imgFoto" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="sp_preguntas_Result">
+          <Property Type="Int16" Name="chrNroPre" Nullable="false" />
+          <Property Type="String" Name="chrDesPre" Nullable="false" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_respuestas_Result">
+          <Property Type="Int16" Name="chrNroPre" Nullable="false" />
+          <Property Type="String" Name="chrCodRes" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="chrDesRes" Nullable="false" MaxLength="120" />
+          <Property Type="Decimal" Name="intValRes" Nullable="false" Precision="18" Scale="1" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ABSA_EvaluacionModelStoreContainer" CdmEntityContainer="ABSA_EvaluacionEntities" >
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ABSA_EvaluacionModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ABSA_EvaluacionModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ABSA_EvaluacionModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ABSA_EvaluacionModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ABSA_EvaluacionModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_insertarEvaluacion" FunctionName="ABSA_EvaluacionModel.Store.sp_insertarEvaluacion" />
+          <FunctionImportMapping FunctionImportName="sp_listarProyectos" FunctionName="ABSA_EvaluacionModel.Store.sp_listarProyectos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_listarProyectos_Result">
+                <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+                <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+                <ScalarProperty Name="chrNomProyecto" ColumnName="chrNomProyecto" />
+                <ScalarProperty Name="chrNomCli" ColumnName="chrNomCli" />
+                <ScalarProperty Name="chrEstado" ColumnName="chrEstado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_listarResultados" FunctionName="ABSA_EvaluacionModel.Store.sp_listarResultados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_listarResultados_Result">
+                <ScalarProperty Name="bytID" ColumnName="bytID" />
+                <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+                <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+                <ScalarProperty Name="chrNomCli" ColumnName="chrNomCli" />
+                <ScalarProperty Name="dtmFecEval" ColumnName="dtmFecEval" />
+                <ScalarProperty Name="chrPuesto" ColumnName="chrPuesto" />
+                <ScalarProperty Name="chrNomEval" ColumnName="chrNomEval" />
+                <ScalarProperty Name="chrResult" ColumnName="chrResult" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_listarResultadosVigentes" FunctionName="ABSA_EvaluacionModel.Store.sp_listarResultadosVigentes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_listarResultadosVigentes_Result">
+                <ScalarProperty Name="bytID" ColumnName="bytID" />
+                <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+                <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+                <ScalarProperty Name="chrNomCli" ColumnName="chrNomCli" />
+                <ScalarProperty Name="dtmFecEval" ColumnName="dtmFecEval" />
+                <ScalarProperty Name="chrPuesto" ColumnName="chrPuesto" />
+                <ScalarProperty Name="chrNomEval" ColumnName="chrNomEval" />
+                <ScalarProperty Name="chrResult" ColumnName="chrResult" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_logeo" FunctionName="ABSA_EvaluacionModel.Store.sp_logeo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_logeo_Result">
+                <ScalarProperty Name="chrUsrEval" ColumnName="chrUsrEval" />
+                <ScalarProperty Name="chrPasEval" ColumnName="chrPasEval" />
+                <ScalarProperty Name="chrNomEval" ColumnName="chrNomEval" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_nota" FunctionName="ABSA_EvaluacionModel.Store.sp_nota">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_nota_Result">
+                <ScalarProperty Name="chrNroPre" ColumnName="chrNroPre" />
+                <ScalarProperty Name="chrCodRes" ColumnName="chrCodRes" />
+                <ScalarProperty Name="chrDesRes" ColumnName="chrDesRes" />
+                <ScalarProperty Name="intValRes" ColumnName="intValRes" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_personalSeleccionado" FunctionName="ABSA_EvaluacionModel.Store.sp_personalSeleccionado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_personalSeleccionado_Result">
+                <ScalarProperty Name="bytID" ColumnName="bytID" />
+                <ScalarProperty Name="chrNomPer" ColumnName="chrNomPer" />
+                <ScalarProperty Name="chrApePer" ColumnName="chrApePer" />
+                <ScalarProperty Name="imgFoto" ColumnName="imgFoto" />
+                <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+                <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+                <ScalarProperty Name="chrPuesto" ColumnName="chrPuesto" />
+                <ScalarProperty Name="chrNomProyecto" ColumnName="chrNomProyecto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_personalXProyecto" FunctionName="ABSA_EvaluacionModel.Store.sp_personalXProyecto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_personalXProyecto_Result">
+                <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+                <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+                <ScalarProperty Name="bytID" ColumnName="bytID" />
+                <ScalarProperty Name="chrApePer" ColumnName="chrApePer" />
+                <ScalarProperty Name="chrNomPer" ColumnName="chrNomPer" />
+                <ScalarProperty Name="chrFecNac" ColumnName="chrFecNac" />
+                <ScalarProperty Name="imgFoto" ColumnName="imgFoto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_preguntas" FunctionName="ABSA_EvaluacionModel.Store.sp_preguntas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_preguntas_Result">
+                <ScalarProperty Name="chrNroPre" ColumnName="chrNroPre" />
+                <ScalarProperty Name="chrDesPre" ColumnName="chrDesPre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ABSA_EvaluacionModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_respuestas" FunctionName="ABSA_EvaluacionModel.Store.sp_respuestas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_respuestas_Result">
+                <ScalarProperty Name="chrNroPre" ColumnName="chrNroPre" />
+                <ScalarProperty Name="chrCodRes" ColumnName="chrCodRes" />
+                <ScalarProperty Name="chrDesRes" ColumnName="chrDesRes" />
+                <ScalarProperty Name="intValRes" ColumnName="intValRes" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ABSA_EvaluacionModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

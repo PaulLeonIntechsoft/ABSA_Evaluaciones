@@ -1,0 +1,141 @@
+body {
+    /*-- Ubicación de la imagen--*/
+    background-image: url(../Images/ingenieria-contra-incendios-equipos-abelin.jpg);
+    /*-- Centrar la imagen --*/
+    background-position: center top;
+    /*-- No repetir imagen de fondo --*/
+    background-repeat: no-repeat;
+    /*-- Imagen fija --*/
+    background-attachment: fixed;
+    /*-- La imagen reescala con el cambio de tamaño de la ventana --*/
+    background-size: cover;
+    /*-- Color de fondo en caso de problemas con imagen --*/
+    background-color: #ffffff;
+}
+
+.todo > div > .row {
+    padding-left:1vw;
+    padding-right: 1vw;
+    margin-bottom: 8px;
+}
+
+.fondo > .row {
+    padding-left:1vw;
+    padding-right: 1vw;
+    margin-bottom: 8px;
+}
+
+.fondo{
+    background-color: rgba(0, 18, 21, 0.51);
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    color: white;
+    border-radius: 8px;
+    /*border: 3px solid #ffffff;*/
+}
+
+.padInterno{
+    padding: 10px 10px;
+}
+
+.todo{
+    margin-top: 2vh;
+}
+
+.imagen-container{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+img{
+    min-width: 113px;
+    margin-left: 15%;
+    width: 70%;
+}
+
+.fondo-evaluador{
+    background-color: rgba(0, 18, 21, 0.51);
+    max-height: 650px;
+    height: 95vh;
+}
+
+.table{
+    text-align: center;
+    color: white;
+}
+
+@media screen and (max-width: 310px) {
+    img{
+        margin-top: 14px;
+        min-width: 113px;
+        max-width: 113px;
+        margin-left: 28%;
+    }
+
+    .fondo-evaluador{
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 311px) and (max-width: 372px) {
+    img{
+        margin-top: 14px;
+        min-width: 113px;
+        max-width: 113px;
+        margin-left: 31%;
+    }
+
+    .fondo-evaluador{
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 373px) and (max-width: 460px) {
+    img{
+        margin-top: 14px;
+        min-width: 113px;
+        max-width: 113px;
+        margin-left: 35%;
+    }
+
+    .fondo-evaluador{
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 461px) and (max-width: 545px) {
+    img{
+        margin-top: 14px;
+        min-width: 113px;
+        max-width: 113px;
+        margin-left: 39%;
+    }
+
+    .fondo-evaluador{
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 546px) and (max-width: 767px) {
+    img{
+        margin-top: 14px;
+        min-width: 113px;
+    }
+
+    .fondo-evaluador{
+        background-color: rgba(0, 18, 21, 0.51);
+        height: 100%;
+    }
+}
+
+.fondo-tabla{
+    background-color: rgba(0, 18, 21, 0.51);
+    margin-bottom: 40px;
+}
+
+h3{
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-left:20px;
+}

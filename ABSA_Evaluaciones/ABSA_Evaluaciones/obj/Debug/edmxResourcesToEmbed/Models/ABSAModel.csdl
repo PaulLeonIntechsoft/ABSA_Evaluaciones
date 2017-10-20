@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ABSA_EvaluacionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ABSA_EvaluacionEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_insertarEvaluacion">
+      <Parameter Name="codigoPersonal" Mode="In" Type="Int32" />
+      <Parameter Name="codRespuestaUno" Mode="In" Type="String" />
+      <Parameter Name="codRespuestaDos" Mode="In" Type="String" />
+      <Parameter Name="codRespuestaTres" Mode="In" Type="String" />
+      <Parameter Name="codRespuestaCuatro" Mode="In" Type="String" />
+      <Parameter Name="codRespuestaCinco" Mode="In" Type="String" />
+      <Parameter Name="codRespuestaSeis" Mode="In" Type="String" />
+      <Parameter Name="codRespuestaSiete" Mode="In" Type="Int16" />
+      <Parameter Name="usrEvaluador" Mode="In" Type="String" />
+      <Parameter Name="valorResultado" Mode="In" Type="String" />
+      <Parameter Name="notaResultado" Mode="In" Type="Decimal" />
+      <Parameter Name="codigoProyecto" Mode="In" Type="String" />
+      <Parameter Name="codigoAdicional" Mode="In" Type="String" />
+      <Parameter Name="puestoPersonal" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_listarProyectos" ReturnType="Collection(ABSA_EvaluacionModel.sp_listarProyectos_Result)" />
+    <FunctionImport Name="sp_listarResultados" ReturnType="Collection(ABSA_EvaluacionModel.sp_listarResultados_Result)">
+      <Parameter Name="codigoPersonal" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_listarResultadosVigentes" ReturnType="Collection(ABSA_EvaluacionModel.sp_listarResultadosVigentes_Result)">
+      <Parameter Name="codigoPersonal" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_logeo" ReturnType="Collection(ABSA_EvaluacionModel.sp_logeo_Result)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="contrasena" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_nota" ReturnType="Collection(ABSA_EvaluacionModel.sp_nota_Result)">
+      <Parameter Name="numeroPregunta" Mode="In" Type="Int16" />
+      <Parameter Name="codigoRespuesta" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_personalSeleccionado" ReturnType="Collection(ABSA_EvaluacionModel.sp_personalSeleccionado_Result)">
+      <Parameter Name="codigoProyecto" Mode="In" Type="String" />
+      <Parameter Name="codigoAdicional" Mode="In" Type="String" />
+      <Parameter Name="idPersonal" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_personalXProyecto" ReturnType="Collection(ABSA_EvaluacionModel.sp_personalXProyecto_Result)">
+      <Parameter Name="codigoProyecto" Mode="In" Type="String" />
+      <Parameter Name="codigoAdicional" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_preguntas" ReturnType="Collection(ABSA_EvaluacionModel.sp_preguntas_Result)" />
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_respuestas" ReturnType="Collection(ABSA_EvaluacionModel.sp_respuestas_Result)">
+      <Parameter Name="numeroPregunta" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_listarProyectos_Result">
+    <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="chrNomProyecto" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="chrNomCli" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="chrEstado" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="sp_listarResultados_Result">
+    <Property Type="Int32" Name="bytID" Nullable="false" />
+    <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="chrNomCli" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="dtmFecEval" Nullable="false" Precision="23" />
+    <Property Type="String" Name="chrPuesto" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="chrNomEval" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="chrResult" Nullable="false" MaxLength="2" />
+  </ComplexType>
+  <ComplexType Name="sp_listarResultadosVigentes_Result">
+    <Property Type="Int32" Name="bytID" Nullable="false" />
+    <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="chrNomCli" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="dtmFecEval" Nullable="false" Precision="23" />
+    <Property Type="String" Name="chrPuesto" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="chrNomEval" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="chrResult" Nullable="false" MaxLength="2" />
+  </ComplexType>
+  <ComplexType Name="sp_logeo_Result">
+    <Property Type="String" Name="chrUsrEval" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="chrPasEval" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="chrNomEval" Nullable="false" MaxLength="70" />
+  </ComplexType>
+  <ComplexType Name="sp_nota_Result">
+    <Property Type="Int16" Name="chrNroPre" Nullable="false" />
+    <Property Type="String" Name="chrCodRes" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="chrDesRes" Nullable="false" MaxLength="120" />
+    <Property Type="Decimal" Name="intValRes" Nullable="false" Precision="18" Scale="1" />
+  </ComplexType>
+  <ComplexType Name="sp_personalSeleccionado_Result">
+    <Property Type="Int32" Name="bytID" Nullable="false" />
+    <Property Type="String" Name="chrNomPer" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="chrApePer" Nullable="false" MaxLength="50" />
+    <Property Type="Binary" Name="imgFoto" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="chrPuesto" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="chrNomProyecto" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sp_personalXProyecto_Result">
+    <Property Type="String" Name="chrCodProyecto" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="chrCodAdicional" Nullable="false" MaxLength="3" />
+    <Property Type="Int32" Name="bytID" Nullable="false" />
+    <Property Type="String" Name="chrApePer" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="chrNomPer" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="chrFecNac" Nullable="false" Precision="23" />
+    <Property Type="Binary" Name="imgFoto" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_preguntas_Result">
+    <Property Type="Int16" Name="chrNroPre" Nullable="false" />
+    <Property Type="String" Name="chrDesPre" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_respuestas_Result">
+    <Property Type="Int16" Name="chrNroPre" Nullable="false" />
+    <Property Type="String" Name="chrCodRes" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="chrDesRes" Nullable="false" MaxLength="120" />
+    <Property Type="Decimal" Name="intValRes" Nullable="false" Precision="18" Scale="1" />
+  </ComplexType>
+</Schema>

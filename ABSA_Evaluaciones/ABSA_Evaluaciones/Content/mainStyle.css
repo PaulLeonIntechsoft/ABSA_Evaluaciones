@@ -1,0 +1,18 @@
+.logoPrincipal{
+    width: 100%;
+    align-content: flex-end;
+}
+
+.logoPrincipal div img{
+    position: absolute;
+    width: 9%;
+    margin: 20px 100px;
+}
+
+.primero{
+    left: 0;
+}
+
+.ultimo{
+    right: 0;
+}

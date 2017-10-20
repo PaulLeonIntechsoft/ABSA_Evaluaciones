@@ -1,0 +1,71 @@
+﻿@model ABSA_Evaluaciones.Models.sp_personalSeleccionado_Result
+
+@{
+    ViewBag.Title = "ABELIN S.A. - Evaluaciones";
+    ViewBag.TipoVista = "Evaluaciones de :";
+    ViewBag.IdEvaluado = Model.bytID;
+    ViewBag.Evaluado = Model.chrNomPer + " " + Model.chrApePer;
+    Layout = "~/Views/Shared/_LayoutTests.cshtml";
+}
+
+@section AddToHead{
+    <link href="@Url.Content("~/Content/listadoStyle.css")" rel="stylesheet" />
+}
+
+@section Imagen{
+
+    @{
+
+        var base64 = Convert.ToBase64String(Model.imgFoto);
+        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+
+    }
+
+    <img src="@imgSrc" />
+
+    <h3 style="display: none" id="proyectoElegido">@Model.chrCodProyecto - @Model.chrCodAdicional - @Model.chrNomProyecto</h3>
+
+}
+
+@section BajoImagen{
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="listado" id="listarVigentes" value="listarVigentes" checked>
+                        Proyectos Vigentes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="listado" id="listarTodos" value="listarTodos">
+                        Todos sus proyectos
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+}
+
+
+<div class="col-xs-12  fondo fondo-tabla">
+    <div class="row padInterno">
+        <div id="tablaProyectos" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <a id="regresarIndex" class="btn btn-danger">Regresar</a>
+        </div>
+    </div>
+</div>
+
+
+@section scriptFinal{
+
+    <script src="~/Scripts/listadoQuery.js"></script>
+
+}

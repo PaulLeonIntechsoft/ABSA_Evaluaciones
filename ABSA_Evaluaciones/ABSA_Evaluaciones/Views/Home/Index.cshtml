@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "ABELIN S.A. - Evaluaciones";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@section AddToHead{
+    <link href="@Url.Content("~/Content/indexStyle.css")" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row centrado">
+        <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+            <div class="ventana-form">
+                <form method="post">
+                    <div class="form-group row">
+                        <label class="col-lg-2">Evaluador :</label>
+                        <div class="col-lg-10">
+                            <p>"@User.Identity.Name"</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2">Proyecto :</label>
+                        <div class="col-lg-10">
+
+                            @Html.DropDownList("Proyecto", (List<SelectListItem>)ViewBag.Proyectos, "--- Seleccionar Proyecto ---", new { @class = "form-control" })
+
+                        </div>
+                        <div id="proyectoVacio" class="col-lg-12">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2">Empleado :</label>  
+                        <div class="col-lg-10">
+                            <select class="form-control" name="Personal" id="Personal">
+                                <option> --- Seleccione Personal --- </option>
+                            </select>   
+                        </div>
+                        <div id="personalVacio" class="col-lg-12">
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <a class="btn btn-danger" href="/Account/LogOff">Salir</a>
+                        <button type="submit" id="btnListar" name="btnListar" class="btn btn-primary" value="Listar">Listar</button>
+                        <button type="submit" id="btnEvaluar" name="btnEvaluar" class="btn btn-primary" value="Evaluar">Evaluar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="exampleModalLabel">ABELIN - Ayuda</h5>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="retornados" style="display: none">
+    <h1> @ViewBag.ReturnSelected </h1>
+</div>
+
+
+@section scriptFinal{
+
+    <script src="~/Scripts/indexQuery.js"></script>
+
+}

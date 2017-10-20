@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pruebaIntechModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="pruebaIntechEntities1" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_cargarProyectos" ReturnType="Collection(pruebaIntechModel.sp_cargarProyectos_Result)" />
+    <FunctionImport Name="sp_cargarUsuarios" ReturnType="Collection(pruebaIntechModel.sp_cargarUsuarios_Result)" />
+    <FunctionImport Name="sp_logeo" ReturnType="Collection(pruebaIntechModel.sp_logeo_Result)">
+      <Parameter Name="p_usuario" Mode="In" Type="String" />
+      <Parameter Name="p_contrasena" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_tecnicoXProyecto" ReturnType="Collection(pruebaIntechModel.sp_tecnicoXProyecto_Result)">
+      <Parameter Name="p_idProyecto" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_cargarProyectos_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="empresa" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="lugar" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_cargarUsuarios_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="usuario" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="contrasena" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_logeo_Result">
+    <Property Type="String" Name="usuario" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="contrasena" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_tecnicoXProyecto_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="Int32" Name="idProyecto" Nullable="true" />
+    <Property Type="Int32" Name="idTecnico" Nullable="true" />
+  </ComplexType>
+</Schema>

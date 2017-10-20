@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pruebaIntechModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cargo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="contrasena" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuarioCargo">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+      <PropertyRef Name="idCargo" />
+    </Key>
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="idCargo" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_cargo">
+    <End Role="cargo" Type="Self.cargo" Multiplicity="1" />
+    <End Role="usuarioCargo" Type="Self.usuarioCargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cargo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuarioCargo">
+        <PropertyRef Name="idCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_usuario">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="usuarioCargo" Type="Self.usuarioCargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuarioCargo">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="pruebaIntechModelStoreContainer">
+    <EntitySet Name="cargo" EntityType="Self.cargo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarioCargo" EntityType="Self.usuarioCargo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_cargo" Association="Self.fk_cargo">
+      <End Role="cargo" EntitySet="cargo" />
+      <End Role="usuarioCargo" EntitySet="usuarioCargo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_usuario" Association="Self.fk_usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="usuarioCargo" EntitySet="usuarioCargo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ABSA_EvaluacionModelStoreContainer" CdmEntityContainer="ABSA_EvaluacionEntities">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ABSA_EvaluacionModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ABSA_EvaluacionModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ABSA_EvaluacionModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ABSA_EvaluacionModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ABSA_EvaluacionModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_insertarEvaluacion" FunctionName="ABSA_EvaluacionModel.Store.sp_insertarEvaluacion" />
+    <FunctionImportMapping FunctionImportName="sp_listarProyectos" FunctionName="ABSA_EvaluacionModel.Store.sp_listarProyectos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_listarProyectos_Result">
+          <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+          <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+          <ScalarProperty Name="chrNomProyecto" ColumnName="chrNomProyecto" />
+          <ScalarProperty Name="chrNomCli" ColumnName="chrNomCli" />
+          <ScalarProperty Name="chrEstado" ColumnName="chrEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_listarResultados" FunctionName="ABSA_EvaluacionModel.Store.sp_listarResultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_listarResultados_Result">
+          <ScalarProperty Name="bytID" ColumnName="bytID" />
+          <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+          <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+          <ScalarProperty Name="chrNomCli" ColumnName="chrNomCli" />
+          <ScalarProperty Name="dtmFecEval" ColumnName="dtmFecEval" />
+          <ScalarProperty Name="chrPuesto" ColumnName="chrPuesto" />
+          <ScalarProperty Name="chrNomEval" ColumnName="chrNomEval" />
+          <ScalarProperty Name="chrResult" ColumnName="chrResult" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_listarResultadosVigentes" FunctionName="ABSA_EvaluacionModel.Store.sp_listarResultadosVigentes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_listarResultadosVigentes_Result">
+          <ScalarProperty Name="bytID" ColumnName="bytID" />
+          <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+          <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+          <ScalarProperty Name="chrNomCli" ColumnName="chrNomCli" />
+          <ScalarProperty Name="dtmFecEval" ColumnName="dtmFecEval" />
+          <ScalarProperty Name="chrPuesto" ColumnName="chrPuesto" />
+          <ScalarProperty Name="chrNomEval" ColumnName="chrNomEval" />
+          <ScalarProperty Name="chrResult" ColumnName="chrResult" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_logeo" FunctionName="ABSA_EvaluacionModel.Store.sp_logeo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_logeo_Result">
+          <ScalarProperty Name="chrUsrEval" ColumnName="chrUsrEval" />
+          <ScalarProperty Name="chrPasEval" ColumnName="chrPasEval" />
+          <ScalarProperty Name="chrNomEval" ColumnName="chrNomEval" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_nota" FunctionName="ABSA_EvaluacionModel.Store.sp_nota">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_nota_Result">
+          <ScalarProperty Name="chrNroPre" ColumnName="chrNroPre" />
+          <ScalarProperty Name="chrCodRes" ColumnName="chrCodRes" />
+          <ScalarProperty Name="chrDesRes" ColumnName="chrDesRes" />
+          <ScalarProperty Name="intValRes" ColumnName="intValRes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_personalSeleccionado" FunctionName="ABSA_EvaluacionModel.Store.sp_personalSeleccionado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_personalSeleccionado_Result">
+          <ScalarProperty Name="bytID" ColumnName="bytID" />
+          <ScalarProperty Name="chrNomPer" ColumnName="chrNomPer" />
+          <ScalarProperty Name="chrApePer" ColumnName="chrApePer" />
+          <ScalarProperty Name="imgFoto" ColumnName="imgFoto" />
+          <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+          <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+          <ScalarProperty Name="chrPuesto" ColumnName="chrPuesto" />
+          <ScalarProperty Name="chrNomProyecto" ColumnName="chrNomProyecto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_personalXProyecto" FunctionName="ABSA_EvaluacionModel.Store.sp_personalXProyecto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_personalXProyecto_Result">
+          <ScalarProperty Name="chrCodProyecto" ColumnName="chrCodProyecto" />
+          <ScalarProperty Name="chrCodAdicional" ColumnName="chrCodAdicional" />
+          <ScalarProperty Name="bytID" ColumnName="bytID" />
+          <ScalarProperty Name="chrApePer" ColumnName="chrApePer" />
+          <ScalarProperty Name="chrNomPer" ColumnName="chrNomPer" />
+          <ScalarProperty Name="chrFecNac" ColumnName="chrFecNac" />
+          <ScalarProperty Name="imgFoto" ColumnName="imgFoto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_preguntas" FunctionName="ABSA_EvaluacionModel.Store.sp_preguntas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_preguntas_Result">
+          <ScalarProperty Name="chrNroPre" ColumnName="chrNroPre" />
+          <ScalarProperty Name="chrDesPre" ColumnName="chrDesPre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ABSA_EvaluacionModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_respuestas" FunctionName="ABSA_EvaluacionModel.Store.sp_respuestas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ABSA_EvaluacionModel.sp_respuestas_Result">
+          <ScalarProperty Name="chrNroPre" ColumnName="chrNroPre" />
+          <ScalarProperty Name="chrCodRes" ColumnName="chrCodRes" />
+          <ScalarProperty Name="chrDesRes" ColumnName="chrDesRes" />
+          <ScalarProperty Name="intValRes" ColumnName="intValRes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ABSA_EvaluacionModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

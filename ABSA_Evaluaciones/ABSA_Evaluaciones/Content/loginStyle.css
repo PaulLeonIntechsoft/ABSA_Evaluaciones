@@ -1,0 +1,80 @@
+body {
+    /*-- Ubicación de la imagen--*/
+    background-image: url(../Images/ingenieria-contra-incendios-abelin.jpg);
+    /*-- Centrar la imagen --*/
+    background-position: center top;
+    /*-- No repetir imagen de fondo --*/
+    background-repeat: no-repeat;
+    /*-- Imagen fija --*/
+    background-attachment: fixed;
+    /*-- La imagen reescala con el cambio de tamaño de la ventana --*/
+    background-size: cover;
+    /*-- Color de fondo en caso de problemas con imagen --*/
+    background-color: #ffffff;
+}
+
+.ventana-login{
+    background-color: rgba(7, 32, 49, 0.22);
+    padding: 10vh 35px;
+    border-radius: 9px;
+}
+
+.ventana-login form h1{
+    color: black;
+}
+
+.ventana-login form h4{
+    color: black;
+}
+
+@media screen and (max-width: 386px) {
+    .ventana-login form h1{
+        font-size: 2em;
+    }
+    
+    .ventana-login form h4{
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 387px) and (max-width: 576px) {
+    .ventana-login form h1{
+        font-size: 2.5em;
+    }
+    
+    .ventana-login form h4{
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .ventana-login form h1{
+        font-size: 2.7em;
+    }
+    
+    .ventana-login form h4{
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .ventana-login form h1{
+        font-size: 2.8em;
+    }
+    
+    .ventana-login form h4{
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    .ventana-login form h1{
+        font-size: 3.3em;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .ventana-login form h1{
+        font-size: 3.5em;
+    }
+}

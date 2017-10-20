@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pruebaIntechModelStoreContainer" CdmEntityContainer="pruebaIntechEntities">
+    <EntitySetMapping Name="cargo">
+      <EntityTypeMapping TypeName="pruebaIntechModel.cargo">
+        <MappingFragment StoreEntitySet="cargo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="pruebaIntechModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="usuarioCargo" TypeName="pruebaIntechModel.usuarioCargo" StoreEntitySet="usuarioCargo">
+      <EndProperty Name="cargo">
+        <ScalarProperty Name="id" ColumnName="idCargo" />
+      </EndProperty>
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="idUsuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
